@@ -6,4 +6,6 @@ class Note(models.Model):
     content = models.TextField(blank=True)
     from uuid import uuid4
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
