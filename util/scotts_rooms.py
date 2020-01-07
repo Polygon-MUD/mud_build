@@ -65,23 +65,7 @@ r_cardassia_prime = Room(title="Cardassia Prime", description="""Lucky you.
  Very Festive times now on Cardassia Prime. Everyone is celebrating making war on Bajor.
   You are Bjoran you say? Uh oh!""")
 
-r_borg.save()
-r_enterprise.save()
-r_vulcan.save()
-r_replicator.save()
-r_alpha_quadrant.save()
-r_transporter.save()
-r_stranded.save()
-r_holodeck.save()
-r_tribble.save()
-r_romulan.save()
-r_shore_leave.save()
-r_earth.save()
-r_klingon.save()
-r_jefferies_tube.save()
-r_delta_quadrant.save()
-r_pon_farr.save()
-r_neutral_zone.save()
-r_bajoran_wormhole.save()
-r_baryon_sweep.save()
-r_cardassia_prime.save()
+borg_hoard = [r_borg, r_enterprise, r_vulcan, r_replicator, r_alpha_quadrant, r_transporter, r_stranded, r_holodeck, r_tribble, r_romulan, r_shore_leave, r_earth, r_klingon, r_jefferies_tube, r_delta_quadrant, r_pon_farr, r_neutral_zone, r_bajoran_wormhole, r_baryon_sweep, r_cardassia_prime ]
+
+for b in borg_hoard:
+  b.save() 
