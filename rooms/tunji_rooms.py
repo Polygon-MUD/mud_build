@@ -37,3 +37,5 @@ r_holy_temple = Room(title="Holy Temple", description="A place to worship Shurim
 r_pykes_grave = Room(title="Pyke's Grave", description="The burial spot of the Pirate drowned in sand")
 
 r_nasus_statue = Room(title="Nasus' Statue", description="Statue of the first descendant of Nasus")
+
+shurima = [r_nasus_statue, r_pykes_grave, r_holy_temple, r_centralis, r_azirs_palace, r_floating_pyramids, r_moutain_pass, r_nefaras_necrocalis, r_royal_palace, r_shurima_lake, r_shurima, r_velocatronic, r_voodou, r_water_gate, r_zayite_complex, r_tempest_forest, r_targon, r_fyron_flat]
