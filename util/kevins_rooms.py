@@ -47,3 +47,23 @@ r_toads_boat = Room(title="Toads Boat", description="""Toad said he'd take you t
 r_toads_island = Room(title="Toads Island", description="""See what the people here have to offer.""")
 
 r_marios_palace = Room(title="Marios Palace", description="""You've been selected to explore Marios palace.""")
+
+
+
+r_gardner.save()
+r_tomb.save()
+r_princess_peach_castle.save()
+r_bowsers_dungeon.save()
+r_toad_town.save()
+r_bonies_cabin.save()
+r_goodnights_theatre.save()
+r_yoshis_yoga_palace.save()
+r_sarasaland.save()
+r_bowsers_kingdom.save()
+r_warios_woods.save()
+r_rosalinas_land.save()
+r_koopalings_shack.save()
+r_lumas_village.save()
+r_toads_boat.save()
+r_toads_island.save()
+r_marios_palace.save()
