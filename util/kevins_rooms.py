@@ -49,21 +49,12 @@ r_toads_island = Room(title="Toads Island", description="""See what the people h
 r_marios_palace = Room(title="Marios Palace", description="""You've been selected to explore Marios palace.""")
 
 
+marios_world = [r_gardner,r_tomb,r_princess_peach_castle,
+r_bowsers_dungeon,r_toad_town,r_bonies_cabin,
+r_goodnights_theatre,r_yoshis_yoga_palace,
+r_sarasaland,r_bowsers_kingdom,r_warios_woods,
+r_rosalinas_land,r_koopalings_shack,r_lumas_village,
+r_toads_boat,r_toads_island,r_marios_palace]
 
-r_gardner.save()
-r_tomb.save()
-r_princess_peach_castle.save()
-r_bowsers_dungeon.save()
-r_toad_town.save()
-r_bonies_cabin.save()
-r_goodnights_theatre.save()
-r_yoshis_yoga_palace.save()
-r_sarasaland.save()
-r_bowsers_kingdom.save()
-r_warios_woods.save()
-r_rosalinas_land.save()
-r_koopalings_shack.save()
-r_lumas_village.save()
-r_toads_boat.save()
-r_toads_island.save()
-r_marios_palace.save()
+for r in marios_world:
+    r.save()

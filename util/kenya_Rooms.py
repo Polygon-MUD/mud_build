@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from adventure.models import Player, Room
        
 suarward_dining = Room(title = "Suarward Dining", description = "Large, square dining room has mismatched wooden furniture.  The seating is cushioned.  The floor is stone. Overall has a quaint atmosphere.")
@@ -34,7 +35,4 @@ flower_retreat = Room(title = "Flower Retreat", description= "A mystical garden,
 
 blitz_cover = Room(title = "Blitz Cover", description= "Underground, yet well lit. Blitz Cover is a reminder of safety in these parts")
 
-
 mystery_lair = Room(title = "Mystery Lair", description= "The room of deja vu, beware!")
-
-
