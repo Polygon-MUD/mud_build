@@ -7,10 +7,10 @@ class RoomSerializer(serializers.ModelSerializer):
   
   class Meta:
     model = Room
-    fields = ['id', 'title', 'description', 'playerNames']
+    fields = ['title', 'description', 'playerNames']
 
 class PlayerSerializer(serializers.ModelSerializer):
   
   class Meta:
     model = Player
-    fields = ['id', 'user', 'currentRoom']
+    fields = ['user', 'currentRoom']
