@@ -48,7 +48,6 @@ r_toads_island = Room(title="Toads Island", description="""See what the people h
 
 r_marios_palace = Room(title="Marios Palace", description="""You've been selected to explore Marios palace.""")
 
-
 marios_world = [r_gardner,r_tomb,r_princess_peach_castle,
 r_bowsers_dungeon,r_toad_town,r_bonies_cabin,
 r_goodnights_theatre,r_yoshis_yoga_palace,
