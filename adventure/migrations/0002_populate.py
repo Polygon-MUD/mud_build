@@ -7,6 +7,18 @@ def generate_rooms(apps, schema_editor):
     Room = apps.get_model('adventure', 'Room')
 
     Room.objects.all().delete()
+
+    # Roads
+    p_dirt_path = Room(title="Dirt Path", description="Easy going path to a variety of adventures")
+    p_mushroom_road = Room(title="Mushroom Road", description="The road to meet Mario")
+    p_desert_path = Room(title="Desert Path", description="Prepare yourself to see the wonders of Shurima")
+    p_marvel_road = Room(title="Marvel Road", description="The path to lead to your superhuman dreams")
+    p_imagination_road = Room(title="Randomizer Road", description="A road that twists and turns beyond the will of fate")
+    p_borg_path = Room(title="Borg Path", description="A path headed down destruction adn chaos")
+
+    roads = [p_dirt_path, p_borg_path, p_desert_path, p_imagination_road, p_marvel_road, p_mushroom_road]
+    for r in roads: r.save()
+
     # Shurima Rooms
     r_floating_pyramids = Room(title="Floating Pyramids", description="Pyramids sitting high above the desert in Shurima")
     r_targon = Room(title="Mt. Targon", description="The desolate mountain with the highest peak, Targon")
@@ -123,16 +135,28 @@ def generate_rooms(apps, schema_editor):
     borg_hoard = [r_borg, r_enterprise, r_vulcan, r_replicator, r_alpha_quadrant, r_transporter, r_stranded, r_holodeck, r_tribble, r_romulan, r_shore_leave, r_earth, r_klingon, r_jefferies_tube, r_delta_quadrant, r_pon_farr, r_neutral_zone, r_bajoran_wormhole, r_baryon_sweep, r_cardassia_prime ]
     for b in borg_hoard: b.save()
 
-    # Roads
-    p_dirt_path = Room(title="Dirt Path", description="Easy going path to a variety of adventures")
-    p_mushroom_road = Room(title="Mushroom Road", description="The road to meet Mario")
-    p_desert_path = Room(title="Desert Path", description="Prepare yourself to see the wonders of Shurima")
-    p_marvel_road = Room(title="Marvel Road", description="The path to lead to your superhuman dreams")
-    p_imagination_road = Room(title="Randomizer Road", description="A road that twists and turns beyond the will of fate")
-    p_borg_path = Room(title="Borg Path", description="A path headed down destruction adn chaos")
+    # Connecting the rooms and the roads
+    import random
 
-    roads = [p_borg_path, p_desert_path, p_dirt_path, p_imagination_road, p_marvel_road, p_mushroom_road]
-    for r in roads: r.save()
+    directions = ["n","s","e","w"]
+
+    rndnum = randint(1, 16)
+    rnddir = random.choice(directions)
+    
+    p_dirt_path.connect_rooms(p_imagination_road, "n")
+    p_dirt_path.connect_rooms(p_desert_path, "s")
+    p_dirt_path.connect_rooms(p_borg_path, "e")
+    p_dirt_path.connect_rooms(p_mushroom_road, "w")
+
+    borg_hoard = borg_hoard[rndnum:] + borg_hoard[:rndnum]
+    marios_world = marios_world[rndnum:] + marios_world[:rndnum]
+    shurima = shurima[rndnum:] + shurima[:rndnum]
+    places = places[rndnum:] + places[:rndnum]
+
+    p_imagination_road.connect_rooms(places[0], "n")
+
+
+
 
 class Migration(migrations.Migration):
 
