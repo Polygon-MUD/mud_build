@@ -4,11 +4,6 @@
 # You can modify generate_rooms() to create your own
 # procedural generation algorithm and use print_rooms()
 # to see the world.
-# import sys
-# sys.path.append('../rooms/')
-# from tunji_rooms import shurima
-
-# print(shurima)
 
 class Room:
     def __init__(self, id, name, description, x, y):
@@ -153,7 +148,6 @@ class World:
 
         # Print string
         print(str)
-
 
 w = World()
 num_rooms = 10
