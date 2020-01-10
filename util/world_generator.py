@@ -149,7 +149,6 @@ class World:
         # Print string
         print(str)
 
-
 w = World()
 num_rooms = 10
 width = 12
