@@ -142,7 +142,7 @@ def generate_rooms(apps, schema_editor):
 
     rndnum = randint(1, 16)
     rnddir = random.choice(directions)
-    
+
     p_dirt_path.connect_rooms(p_imagination_road, "n")
     p_dirt_path.connect_rooms(p_desert_path, "s")
     p_dirt_path.connect_rooms(p_borg_path, "e")
@@ -154,6 +154,15 @@ def generate_rooms(apps, schema_editor):
     places = places[rndnum:] + places[:rndnum]
 
     p_imagination_road.connect_rooms(places[0], "n")
+    c, i = 1, 0
+    while i < len(places):
+      if c >= len(places):
+        c = i + 1
+      places[i].connect_rooms(places[c], rnddir)
+      c += 2
+      i += 1
+
+      
 
 
 
