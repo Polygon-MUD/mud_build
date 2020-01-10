@@ -8,6 +8,6 @@ p_mushroom_road = Room(title="Mushroom Road", description="The road to meet Mari
 
 p_desert_path = Room(title="Desert Path", description="Prepare yourself to see the wonders of Shurima")
 
-p_ff_path = Room(title="Final Fantasy Path", description="The path to lead to your final destination")
+p_marvel_road = Room(title="Marvel Road", description="The path to lead to your superhuman dreams")
 
 p_imagination_road = Room(title="Randomizer Road", description="A road that twists and turns beyond the will of fate")

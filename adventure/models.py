@@ -36,7 +36,7 @@ class Room(models.Model):
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
     def __repr__(self):
-        return f"This room is {self.title}"
+        return f"This room is {self.title}, id {self.id}"
 
 class Player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
