@@ -2,17 +2,17 @@ from django.contrib.auth.models import User
 from adventure.models import Player, Room
 
 
-allRooms = [x for x in Room.objects.values()]
-roads = allRooms[:4]#4
-desert = allRooms[:18]#18
-twisted = allRooms[:18]#18
-mushKing = allRooms[:17]#17
-borgHome = allRooms[:20]#20
+allRooms = [x for x in Room.objects.all()]
+roads = allRooms[:5]#4
+desert = allRooms[5:24]#18
+twisted = allRooms[24:43]#18
+mushKing = allRooms[43:61]#17
+borgHome = allRooms[61:]#20
 
 # Connecting the rooms and the roads
 import random
 
-directions = [["n", "s"], ["s", "n"], ["e", "w"], ["w", "e"]
+directions = [["n", "s"], ["s", "n"], ["e", "w"], ["w", "e"]]
 
 rndnum = random.randint(1, 16)
 rnddir = random.choice(directions)
@@ -53,7 +53,7 @@ borg_hoard[0].connectRooms(roads[3], "w")
 
 
 c, i, temp = 1, 0, []
-while i < len(shurima):
+while i < len(shurima)/2:
   if c >= len(shurima):
     c = i + 1
   temp = rnddir
@@ -62,7 +62,9 @@ while i < len(shurima):
   c += 2
   i += 1
 
-while i < len(places):
+
+c, i, temp = 1, 0, []
+while i < len(places)/2:
   if c >= len(places):
     c = i + 1
   temp = rnddir
@@ -71,7 +73,9 @@ while i < len(places):
   c += 2
   i += 1
 
-while i < len(marios_world):
+
+c, i, temp = 1, 0, []
+while i < len(marios_world)/2:
   if c >= len(marios_world):
     c = i + 1
   temp = rnddir
@@ -80,7 +84,9 @@ while i < len(marios_world):
   c += 2
   i += 1
 
-while i < len(borg_hoard):
+
+c, i, temp = 1, 0, []
+while i < len(borg_hoard)/2:
   if c >= len(borg_hoard):
     c = i + 1
   temp = rnddir
@@ -94,3 +100,5 @@ players=Player.objects.all()
 for p in players:
   p.currentRoom=roads[0].id
   p.save()
+
+  

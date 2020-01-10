@@ -36,7 +36,7 @@ class Room(models.Model):
     def playerUUIDs(self, currentPlayerID):
         return [p.uuid for p in Player.objects.filter(currentRoom=self.id) if p.id != int(currentPlayerID)]
     def __repr__(self):
-        return f"This room is {self.title}, id {self.id}, has the ability to connect rooms with {self.connectRooms('guess', 'w')}"
+        return f"\nThis room is {self.title}, id {self.id}, is connected to {self.n_to}, {self.s_to}, {self.w_to}, and {self.e_to}"
 
 class Player(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
