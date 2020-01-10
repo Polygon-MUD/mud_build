@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from adventure.models import Player, Room
 
 
-allRooms = [x for x in Room.objects.all()]
+allRooms = [x for x in Room.objects.values()]
 roads = allRooms[:4]#4
 desert = allRooms[:18]#18
 twisted = allRooms[:18]#18
@@ -53,6 +53,15 @@ borg_hoard[0].connectRooms(roads[3], "w")
 
 
 c, i, temp = 1, 0, []
+while i < len(shurima):
+  if c >= len(shurima):
+    c = i + 1
+  temp = rnddir
+  shurima[i].connectRooms(shurima[c], temp[1])
+  shurima[c].connectRooms(shurima[i], temp[0])
+  c += 2
+  i += 1
+
 while i < len(places):
   if c >= len(places):
     c = i + 1
@@ -62,9 +71,26 @@ while i < len(places):
   c += 2
   i += 1
 
+while i < len(marios_world):
+  if c >= len(marios_world):
+    c = i + 1
+  temp = rnddir
+  marios_world[i].connectRooms(marios_world[c], temp[1])
+  marios_world[c].connectRooms(marios_world[i], temp[0])
+  c += 2
+  i += 1
+
+while i < len(borg_hoard):
+  if c >= len(borg_hoard):
+    c = i + 1
+  temp = rnddir
+  borg_hoard[i].connectRooms(borg_hoard[c], temp[1])
+  borg_hoard[c].connectRooms(borg_hoard[i], temp[0])
+  c += 2
+  i += 1
 
 
 players=Player.objects.all()
 for p in players:
-  p.currentRoom=r_outside.id
+  p.currentRoom=roads[0].id
   p.save()
