@@ -18,9 +18,10 @@ whitenoise = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+graphene-django = "*"
 
 [dev-packages]
 pylint = "*"
 
 [requires]
-python_version = "3.8"
+python_version = "3.7"

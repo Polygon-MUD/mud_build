@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'graphene_django',
     'adventure',
     'api',
-    'store',
     'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
@@ -51,6 +50,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'rest_auth.registration',
 ]
+GRAPHENE = {
+    'SCHEMA': 'django_root.schema.schema'
+}
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 SITE_ID = 1
@@ -64,7 +66,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.BrokenLinkEmailsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
@@ -152,6 +153,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 import django_heroku
 django_heroku.settings(locals())
